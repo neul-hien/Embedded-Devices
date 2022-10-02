@@ -1,0 +1,16 @@
+int x = 0;
+void setup()
+{
+  pinMode(2, INPUT);
+  pinMode(13, OUTPUT);
+}
+
+void loop()
+{
+  x = digitalRead(2);       //Đọc dữ liệu từ cổng 2
+                            
+  if( x == HIGH )           // Kiểm tra xem nút có được bấm hay không
+    digitalWrite(13,HIGH);  //Bật led
+  else
+    digitalWrite(13, LOW);  //Tắt led 
+}
