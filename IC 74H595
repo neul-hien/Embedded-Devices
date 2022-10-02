@@ -1,0 +1,22 @@
+
+#define _clock 7
+#define _latch 6
+#define _data 5
+void setup()
+{
+  pinMode(_latch, OUTPUT);
+  pinMode(_clock, OUTPUT);
+  pinMode(_data, OUTPUT);
+}
+
+void loop()
+{
+  for(int i=0; i<256;i++)                 //Khởi tạo vòng lặp số từ 1->256
+  {
+    digitalWrite(_latch, LOW);            //Đóng cổng LATCH
+    shiftOut(_data, _clock, LSBFIRST, i); //Dùng hàm ShiftOut để truyền vào IC 8bit có giá trị 
+    digitalWrite(_latch, HIGH);           //Mở cổng LATCH
+                 delay(500);          
+  }
+  
+}
