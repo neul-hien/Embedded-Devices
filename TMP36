@@ -12,42 +12,31 @@ void setup()
 }
 void loop()
 {
-  // set threshold temperature to activate LEDs
+  // Đặt mức nhiệt độ để kích hoạt đèn LED
   baselineTemp = 40;
-  // measure temperature in Celsius
+  // Đo nhiệt độ theo độ C
   celsius = map(((analogRead(A0) - 20) * 3.04), 0, 1023, -40, 125);
-
-// convert to Fahrenheit
-  fahrenheit = ((celsius * 9) / 5 + 32);
-  Serial.print(celsius);
-  Serial.print(" C, ");
-  Serial.print(fahrenheit);
-  Serial.println(" F");
-  if (celsius < baselineTemp) {
+  //Kiểm tra nhiệt độ để bật đèn led
+  if (celsius < baselineTemp) {                                     //Khi nhiệt độ dưới 40 độ C thì đèn không bật
     digitalWrite(2, LOW);
     digitalWrite(3, LOW);
     digitalWrite(4, LOW);
   }
-  if (celsius >= baselineTemp && celsius < baselineTemp + 10) {
+  if (celsius >= baselineTemp && celsius < baselineTemp + 20) {     //Khi nhiệt độ trên 40 độ C và dưới 60 độ C thì đèn xanh bật ( LED cắm vào cổng 2)
     digitalWrite(2, HIGH);
     digitalWrite(3, LOW);
     digitalWrite(4, LOW);
   }
-  if (celsius >= baselineTemp + 10 && celsius < baselineTemp + 20) {
+  if (celsius >= baselineTemp + 20 && celsius < baselineTemp + 40) {  //Khi nhiệt độ trên 60 độ C và dưới 80 độ C thì đèn xanh và vàng bật ( LED cắm vào cổng 2 và 3)
     digitalWrite(2, HIGH);
     digitalWrite(3, HIGH);
     digitalWrite(4, LOW);
   }
-  if (celsius >= baselineTemp + 20 && celsius < baselineTemp + 30) {
+ 
+  if (celsius >= baselineTemp + 40) {                               //Khi nhiệt độ trên 80 độ C thì đèn xanh, vàng và đỏ bật ( LED cắm vào cổng 2, 3 và 4)
     digitalWrite(2, HIGH);
     digitalWrite(3, HIGH);
     digitalWrite(4, HIGH);
   }
-  if (celsius >= baselineTemp + 30) {
-    digitalWrite(2, HIGH);
-    digitalWrite(3, HIGH);
-    digitalWrite(4, HIGH);
-  }
-  delay(1000); // Wait for 1000 millisecond(s)
 }
   
