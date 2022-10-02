@@ -1,0 +1,178 @@
+// C++ code
+//
+void setup()
+{
+  pinMode(13, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(1, OUTPUT);
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);
+}
+void so_khong()
+{
+  digitalWrite(1,HIGH);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,HIGH);
+  digitalWrite(5,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(7,LOW);
+  digitalWrite(8,HIGH); 
+}
+
+void so_mot()
+{
+  digitalWrite(1,LOW);
+  digitalWrite(2,HIGH);
+  digitalWrite(3,HIGH);
+  digitalWrite(4,LOW);
+  digitalWrite(5,LOW);
+  digitalWrite(6,LOW);
+  digitalWrite(7,LOW);
+  digitalWrite(8,HIGH);
+}
+void so_hai()
+{
+  digitalWrite(1,HIGH); //A
+  digitalWrite(2,HIGH); //B
+  digitalWrite(3,LOW); //C
+  digitalWrite(4,HIGH); //D
+  digitalWrite(5,HIGH); //E
+  digitalWrite(6,LOW); //F
+  digitalWrite(7,HIGH);//G
+  digitalWrite(8,HIGH);//DOT
+}
+void so_ba()
+{
+  digitalWrite(1,HIGH);//A
+  digitalWrite(2,HIGH);//B
+  digitalWrite(3,HIGH);//C
+  digitalWrite(4,HIGH);//D
+  digitalWrite(5,LOW);//E
+  digitalWrite(6,LOW);//F
+  digitalWrite(7,HIGH);//G
+  digitalWrite(8,HIGH);//Dot
+}
+void so_bon()
+{
+  digitalWrite(1,LOW);//A
+  digitalWrite(2,HIGH);//B
+  digitalWrite(3,HIGH);//C
+  digitalWrite(4,LOW);//D
+  digitalWrite(5,LOW);//E
+  digitalWrite(6,HIGH);//F
+  digitalWrite(7,HIGH);//G
+  digitalWrite(8,HIGH);//Dot
+}
+void so_nam()
+ {
+  digitalWrite(1,HIGH);//A
+  digitalWrite(2,LOW);//B
+  digitalWrite(3,HIGH);//C
+  digitalWrite(4,HIGH);//D
+  digitalWrite(5,LOW);//E
+  digitalWrite(6,HIGH);//F
+  digitalWrite(7,HIGH);//G
+  digitalWrite(8,HIGH);//Dot
+}
+void so_sau()
+{
+  digitalWrite(1,HIGH);//A
+  digitalWrite(2,LOW);//B
+  digitalWrite(3,HIGH);//C
+  digitalWrite(4,HIGH);//D
+  digitalWrite(5,HIGH);//E
+  digitalWrite(6,HIGH);//F
+  digitalWrite(7,HIGH);//G
+  digitalWrite(8,HIGH);//Dot
+}
+void so_bay()
+ {
+  digitalWrite(1,HIGH);//A
+  digitalWrite(2,HIGH);//B
+  digitalWrite(3,HIGH);//C
+  digitalWrite(4,LOW);//D
+  digitalWrite(5,LOW);//E
+  digitalWrite(6,LOW);//F
+  digitalWrite(7,LOW);//G
+  digitalWrite(8,HIGH);//Dot
+}
+void so_tam()
+ {
+  digitalWrite(1,HIGH);//A
+  digitalWrite(2,HIGH);//B
+  digitalWrite(3,HIGH);//C
+  digitalWrite(4,HIGH);//D
+  digitalWrite(5,HIGH);//E
+  digitalWrite(6,HIGH);//F
+  digitalWrite(7,HIGH);//G
+  digitalWrite(8,HIGH);//Dot
+}
+void so_chin()
+{
+  digitalWrite(1,HIGH);//A
+  digitalWrite(2,HIGH);//B
+  digitalWrite(3,HIGH);//C
+  digitalWrite(4,HIGH);//D
+  digitalWrite(5,LOW);//E
+  digitalWrite(6,HIGH);//F
+  digitalWrite(7,HIGH);//G
+  digitalWrite(8,HIGH);//Dot
+}
+void loop()
+{
+  //DEN DO
+  digitalWrite(13, HIGH);
+  so_ba();
+  delay(1000);
+  so_hai();
+  delay(1000);
+  so_mot();
+  delay(1000);
+  so_khong();
+  delay(1000);
+  digitalWrite(13, LOW);
+  
+  
+  
+  
+  //DEN XANH 
+  digitalWrite(12, HIGH);
+  so_chin();
+  delay(1000);
+  so_tam();
+  delay(1000);
+  so_bay();
+  delay(1000);
+  so_sau();
+  delay(1000);
+  so_nam();
+  delay(1000);
+  so_bon();
+  delay(1000);
+  so_ba();
+  delay(1000);
+  so_hai();
+  delay(1000);
+  so_mot();
+  delay(1000);
+  so_khong();
+  delay(1000);
+  digitalWrite(12,LOW);
+  
+  //DEN VANG
+  digitalWrite(11, HIGH);
+  so_hai();
+  delay(1000);
+  so_mot();
+  delay(1000);
+  so_khong();
+  delay(1000);
+  digitalWrite(11, LOW);
+}
