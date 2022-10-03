@@ -23,9 +23,9 @@ void loop()
   delayMicroseconds(10);       // xung có độ dài 5 microSeconds
   digitalWrite(trigPin, LOW);  // tắt chân trig
   
-  duration = pulseIn(echoPin,HIGH); // Đo độ rộng xung HIGH ở chân echo. 
+  duration = pulseIn(echoPin,HIGH); // Đo độ rộng xung ở chân echo. 
   
-  distance = duration * 0.034/2;      //Chuyen doi don vi in -> cm 
+  distance = duration * 0.034/2;      //Chuyển đổi đơn vị in -> cm 
   // Kiểm tra khoảng cách vật thể 
   if(distance <= 125 &&distance >2){    //Nếu vật thể trong khoảng 2 -> 125 thì đèn xanh(12) sáng
     digitalWrite(12, HIGH);
