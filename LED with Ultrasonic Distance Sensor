@@ -1,0 +1,56 @@
+#define echoPin 4 // chân echo của HC-SR04
+#define trigPin 5 // chân trig của HC-SR04
+
+int val;
+long duration;  // biến đo thời gian
+int distance;   // biến lưu khoảng cách 
+  
+void setup()
+{
+  pinMode(trigPin, OUTPUT); // chân trig sẽ phát tín hiệu
+  pinMode(echoPin, INPUT);  // chân echo sẽ nhận tín hiệu
+  pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(10, OUTPUT);
+}
+
+void loop()
+{
+  digitalWrite(trigPin, LOW); // tắt chân trig
+  delayMicroseconds(2);
+  
+  digitalWrite(trigPin, HIGH); // phát xung từ chân trig
+  delayMicroseconds(10);       // xung có độ dài 5 microSeconds
+  digitalWrite(trigPin, LOW);  // tắt chân trig
+  
+  duration = pulseIn(echoPin,HIGH); // Đo độ rộng xung HIGH ở chân echo. 
+  
+  distance = duration * 0.034/2;      //Chuyen doi don vi in -> cm 
+  // Kiểm tra khoảng cách vật thể 
+  if(distance <= 125 &&distance >2){    //Nếu vật thể trong khoảng 2 -> 125 thì đèn xanh(12) sáng
+    digitalWrite(12, HIGH);
+    digitalWrite(11, LOW);
+    digitalWrite(10, LOW);
+  }
+  else{
+    if(distance>125 && distance < 225){ //Nếu vật thể trong khoảng 125 -> 225 thì đèn xanh(12) và vàng(11) sáng
+    	digitalWrite(12, HIGH);
+    	digitalWrite(11, HIGH);
+    	digitalWrite(10, LOW);
+    }
+    else{
+      if(distance>=225 && distance <= 326){ //Nếu vật thể trong khoảng 225 -> 326  thì 3 đèn xanh(12), vàng(11), đỏ(10) sáng
+       digitalWrite(12, HIGH);
+    	digitalWrite(11, HIGH);
+    	digitalWrite(10, HIGH);
+      }
+      else
+      {
+        digitalWrite(12, LOW);
+        digitalWrite(11, LOW);
+        digitalWrite(10, LOW);
+      }
+    }
+  }
+  
+}
