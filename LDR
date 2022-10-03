@@ -1,0 +1,16 @@
+
+int x;
+void setup()
+{
+  pinMode(9, OUTPUT);
+  pinMode(A0, INPUT);
+}
+
+void loop()
+{
+  x = analogRead(A0); //Đọc dữ liệu từ chân A0
+  if(x<500)           //Đèn sáng nếu x<500 và ngược lại 
+    digitalWrite(9,HIGH);
+  else
+    digitalWrite(9,LOW);
+}
